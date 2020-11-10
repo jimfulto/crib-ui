@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table table-bordered table-inverse">
+      <tr>
+        <th>Type</th>
+        <th>Address</th>
+        <th>Description</th>
+        <th class="text-right">Purchase Price</th>
+      </tr>
+      <tr *ngFor="let crib of cribs">
+        <td>
+          {{crib.type}}
+        </td>
+        <td>
+          {{crib.address}}
+        </td>
+        <td>
+          {{crib.description}}
+        </td>
+        <td class="text-right">
+          {{crib.price}}
+        </td>
+      </tr>
+    </table>
+  </div>
