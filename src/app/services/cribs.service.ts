@@ -19,7 +19,7 @@ export class CribsService {
   }
 
   getCrib(id: number) {
-    return this.http.get('/server/api/v1/cribs' + id);
+    return this.http.get('/server/api/v1/cribs/' + id);
   }
 
   createCribRegistration(crib) {

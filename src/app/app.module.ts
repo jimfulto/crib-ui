@@ -7,17 +7,21 @@ import { AppComponent } from './app.component';
 import { CribsService } from './services/cribs.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    ViewRegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [CribsService],
   bootstrap: [AppComponent]

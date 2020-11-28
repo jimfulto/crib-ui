@@ -30,7 +30,7 @@
           </h3>
           <h4>
             <i class='glyphicon glyphicon-home'></i>
-              {{ crib.address }}
+              <a [routerLink]="['/admin/view', crib.id]">{{ crib.address }}</a>
           </h4>
 
           <hr>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { CribsService } from 'src/app/services/cribs.service';
 
 @Component({
@@ -29,6 +30,23 @@ export class HomeComponent implements OnInit {
       area: new FormControl('', Validators.required),
       image: new FormControl('', Validators.required)
     });
+  }
+
+  submitRegistration() {
+    if(this.cribform.valid) {
+      this.validMessage = 'Your crib registration has been submitted. Thank you!';
+      this.cribService.createCribRegistration(this.cribform.value).subscribe(
+        data => {
+          this.cribform.reset();
+          return true;
+        },
+        error => {
+          return Observable.throw(error);
+        }
+      )
+    } else {
+      this.validMessage = 'Please fill out the form before submitting!';
+    }
   }
 
 }
